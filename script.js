@@ -1,8 +1,24 @@
-//your code here
 var btn=document.getElementById("btn");
-var numptag=document.getElementById("num");
-function generateRandomNumber(){
-	var no=Math.floor(Math.random()*40)-20;
-	numPtag.textContent=no;
+var numPtag=document.getElementById("num");
+var res=document.getElementById("respond");
+var inputValue=document.getElementById("guess").value;
+function randomNumGenerator(){
+randomNum=Math.floor(Math.random()*41)-20;
+	document.getElementById("num").innerText=randomNum;
+	guessNum();
+	print();
+	
 }
-btn.addEventListener("Click", generateRandomNumber);
+function guessNum(){
+	input=Number(document.getElementById("guess").value);
+}
+function print(){
+	if(Math.abs(randomNum)-input)<=5){
+		document.getElementById("respond").innerText="Hot";
+	}
+	else{
+		document.getElementById("respond").innerHTML="Cold";
+	}
+}
+btn.addEventListener("click",randomNumGenerator);
+
