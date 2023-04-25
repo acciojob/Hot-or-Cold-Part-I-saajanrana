@@ -2,6 +2,8 @@
 var randomNum;
 var input;
 
+
+
 function randomNumGenerator() {
   randomNum = Math.floor(Math.random() * 41) - 20;
   document.getElementById("num").innerText = randomNum;
@@ -19,3 +21,4 @@ function print() {
     document.getElementById("respond").innerHTML = "Cold";
   }
 }
+randomNumGenerator(input);
