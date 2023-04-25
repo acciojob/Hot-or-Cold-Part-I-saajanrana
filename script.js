@@ -1,6 +1,6 @@
 
 let secretNumber = Math.floor(Math.random() * 100) + 1;
-let previousGuess = null;
+let previousGuess = 0;
 
 function guessNumber() {
   const guess = parseInt(document.getElementById("guess").value);
