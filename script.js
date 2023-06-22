@@ -12,48 +12,7 @@ function guessNumber() {
     const previousDifference = previousGuess ? Math.abs(previousGuess - secretNumber) : difference + 1;
     if (difference < previousDifference) {
       message = "Getting hotter!";
-    } else {var secretNumber = Math.floor(Math.random() * 100) + 1;
-var previousGuess = null;
-
-function checkGuess() {
-  var guessInput = document.getElementById('guess');
-  var guess = parseInt(guessInput.value);
-
-  if (isNaN(guess)) {
-    displayMessage('Please enter a valid number.');
-    return;
-  }
-
-  if (guess === secretNumber) {
-    displayMessage('Congratulations! You guessed the correct number.');
-  } else {
-    if (previousGuess !== null) {
-      var currentDifference = Math.abs(guess - secretNumber);
-      var previousDifference = Math.abs(previousGuess - secretNumber);
-
-      if (currentDifference < previousDifference) {
-        displayMessage('Getting hotter!');
-        if (guess < secretNumber) {
-          displayMessage('Guess higher!');
-        } else {
-          displayMessage('Guess lower!');
-        }
-      } else {
-        displayMessage('Getting colder!');
-      }
-    }
-
-    previousGuess = guess;
-  }
-
-  guessInput.value = '';
-}
-
-function displayMessage(message) {
-  var responseElement = document.getElementById('response');
-  responseElement.textContent = message;
-}
-
+    } else {
       message = "Getting colder!";
     }
     if (guess < secretNumber) {
