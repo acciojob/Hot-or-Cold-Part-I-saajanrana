@@ -1,26 +1,27 @@
+var randomNum;
+var input;
+function randomNumGenerator()
+{
+    randomNum = Math.floor(Math.random()*41) - 20;
+    document.getElementById("num").innerHTML = randomNum;
+    guessName();
+    print();
+}
 
-let secretNumber = Math.floor(Math.random() * 100) + 1;
-let previousGuess = 0;
+function guessName()
+{
+    input = parseInt(document.getElementById("guess").value);
+}
 
-function guessNumber() {
-  const guess = parseInt(document.getElementById("guess").value);
-  let message = "";
-  if (guess === secretNumber) {
-    message = "Congratulations! You guessed the number!";
-  } else {
-    const difference = Math.abs(guess - secretNumber);
-    const previousDifference = previousGuess ? Math.abs(previousGuess - secretNumber) : difference + 1;
-    if (difference < previousDifference) {
-      message = "Getting hotter!";
-    } else {
-      message = "Getting colder!";
+function print()
+{
+    if(Math.abs(randomNum - input) <= 5)
+    {
+        document.getElementById("respond").innerHTML = "Hot";
     }
-    if (guess < secretNumber) {
-      message += " Guess higher!";
-    } else {
-      message += " Guess lower!";
+
+    else 
+    {
+        document.getElementById("respond").innerHTML = "Cold";
     }
-    previousGuess = guess;
-  }
-  document.getElementById("response").textContent = message;
 }
